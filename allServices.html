@@ -1,0 +1,950 @@
+Thank you for providing the `services.html` file. However, it seems you haven't shared the actual code or content for `services.html` in this request. Could you please upload or paste the code for `services.html` so I can use its card information (e.g., descriptions, images, or other details) for the corresponding sections in `allServices.html`? Without the file, I can proceed with the updates to `index.html` and create `allServices.html` using placeholder content for the Commercial and Residential Landscaping sections, but incorporating the `services.html` content will ensure accuracy.
+
+For now, I’ll assume you want me to proceed with the changes based on your instructions, using placeholder content for the cards in `allServices.html` where `services.html` data is needed, and I’ll update `index.html` as requested. If you provide `services.html` later, I can revise the artifact to include its content. Below, I’ll address all your requests and create both files, ensuring consistency with the homepage styling and functionality.
+
+### Overview of Changes
+1. **Update Commercial Landscaping Card Description in `index.html`**:
+   - Change the description to: "Elevate your business with tailored commercial landscaping, featuring signature palm designs, professional layouts, and low-maintenance solutions for a lasting impression."
+
+2. **Align Links Horizontally on Desktop in `index.html`**:
+   - Modify the Services section to display the links ("Palm Tree Installation", "View Commercial Services", "View Residential Services") horizontally on desktop (`lg` breakpoint and above) using flexbox, while keeping them stacked vertically on mobile and tablet (`sm` and `md` breakpoints).
+
+3. **Create `allServices.html`**:
+   - Create a new HTML page named `allServices.html` with three sections: Palm Tree Installation, Commercial Landscaping, and Residential Landscaping.
+   - Use the same header, footer, styling, and dependencies (Tailwind CSS, AOS, Feather Icons) as `index.html` for consistency.
+   - Update the links under the cards in `index.html` to point to the corresponding sections in `allServices.html` (`allServices.html#palm-tree-installation`, `allServices.html#commercial-landscaping`, `allServices.html#residential-landscaping`).
+
+4. **Palm Tree Installation Section in `allServices.html`**:
+   - Copy the "Our Palm Tree Varieties" section from `index.html`, including the title, description, and six palm variety cards (Queen Palm, Robellini Palm, Sylvester Palm, Foxtail Palm, Bismarck Palm, Canary Island Date Palm), with identical formatting.
+
+5. **Commercial Landscaping Section in `allServices.html`**:
+   - Create five cards: "Land Clearing", "Sod Installation", "Neighborhood Planning", "Community Planning", and two additional relevant cards ("Irrigation Systems" and "Hardscape Design").
+   - Since `services.html` is not provided, I’ll use placeholder images and descriptions styled consistently with `index.html`. If you provide `services.html`, I can update these cards.
+
+6. **Residential Landscaping Section in `allServices.html`**:
+   - Create six cards: "Sod Installation", "Custom Rock Beds", "Irrigation Systems", "Tree/Stump Removal", "Paver Patios", "Paver Driveways".
+   - Use placeholder images and descriptions styled consistently with `index.html`, pending `services.html` content.
+
+7. **Handling Missing `services.html`**:
+   - Without `services.html`, I’ll create new card content for the Commercial and Residential Landscaping sections using placeholder images from Unsplash and descriptions aligned with the business theme. If you provide `services.html`, I’ll revise `allServices.html` to incorporate its card data.
+
+### Implementation Details
+- **Horizontal Link Alignment**: Update the `.services-grid` class to use `lg:flex-row` for horizontal alignment on desktop, with each card and link wrapped in a `.service-card-container` for consistent spacing.
+- **Consistent Styling**: Reuse `index.html`’s Tailwind classes, AOS animations, Feather Icons, and custom CSS (e.g., `.palm-icon`, `.service-card`) in `allServices.html`.
+- **Placeholder Images**: Use Unsplash images with `w_800` and `webp` format for new cards, matching `index.html`’s image styling.
+- **Anchor Links**: Update `index.html` card links to point to `allServices.html` sections with appropriate `id` attributes.
+- **Card Consistency**: Ensure all cards in `allServices.html` use the same structure (`service-card`, `h-64` images, `p-6` padding) as `index.html` for a cohesive look.
+
+### Updated `index.html`
+<xaiArtifact artifact_id="969f7c01-45d3-4293-9739-6f7f031aef2c" artifact_version_id="7f233560-10b2-4cf3-9ea9-9d6efaa2e602" title="index.html" contentType="text/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Palm Tree Installations | Jacksonville, FL</title>
+    <meta name="description" content="Premier palm tree installation and landscaping services in Jacksonville, FL. Transforming properties with luxury palms for residential, commercial, and new construction projects.">
+    <meta name="keywords" content="palm tree installation, landscaping, Jacksonville, luxury palms, tropical landscaping, commercial landscaping, residential landscaping">
+    <meta name="author" content="Luxury Palm Landworks">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Luxury Palm Landworks | Jacksonville, FL">
+    <meta property="og:description" content="Premier palm tree installation and landscaping services in Jacksonville, FL. Transform your property with our tropical designs.">
+    <meta property="og:image" content="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758906114/IMG_5125.heic_qmtjxr_dbv9tr.jpg">
+    <meta property="og:url" content="https://www.luxurypalmsjax.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxury Palm Landworks | Jacksonville, FL">
+    <meta name="twitter:description" content="Premier palm tree installation and landscaping services in Jacksonville, FL. Transform your property with our tropical designs.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758906114/IMG_5125.heic_qmtjxr_dbv9tr.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1920/v1758906114/IMG_5125.heic_qmtjxr_dbv9tr.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .tree-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .palm-icon {
+            color: #22c55e;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+        }
+        .emoji-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .service-link-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 8px;
+        }
+        @media (min-width: 1024px) {
+            .services-grid {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 2rem;
+            }
+            .service-card-container {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Luxury Palm Landworks",
+        "image": "https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758906114/IMG_5125.heic_qmtjxr_dbv9tr.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jacksonville",
+            "addressRegion": "FL",
+            "addressCountry": "US"
+        },
+        "telephone": "(443) 487-1019",
+        "email": "mjjg2288@gmail.com",
+        "url": "https://www.luxurypalmsjax.com",
+        "description": "Premier palm tree installation and landscaping services in Jacksonville, FL.",
+        "openingHours": [
+            "Mo-Fr 08:00-18:00",
+            "Sa 09:00-14:00"
+        ]
+    }
+    </script>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <i data-feather="palm-tree" class="palm-icon h-8 w-8"></i>
+                    <span class="ml-2 text-xl font-bold text-gray-900">Luxury Palm Landworks</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="index.html" class="text-green-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="allServices.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="gallery.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Gallery</a>
+                        <a href="index.html#palm-types" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Palm Types</a>
+                        <a href="index.html#contact" class="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition duration-300">Get a Quote</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-600 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle mobile menu">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="index.html" class="text-green-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="allServices.html" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
+                    <a href="index.html#palm-types" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Palm Types</a>
+                    <a href="index.html#contact" class="bg-green-600 text-white block px-4 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-300">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center justify-center text-white pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Transform Your Property With Luxury Palms</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Jacksonville's premier palm tree installation specialists creating tropical paradises for homes and businesses.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html#contact" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-md text-lg font-medium transition duration-300">Request a Consultation</a>
+                <a href="allServices.html" class="bg-white hover:bg-gray-100 text-green-600 px-8 py-4 rounded-md text-lg font-medium transition duration-300">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Premium Services</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Specializing in palm tree installations with comprehensive landscaping solutions for every property type.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:flex services-grid">
+                <div class="service-card-container">
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <picture>
+                            <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758906111/IMG_4560.heic_uvea3f_aarxis.webp" type="image/webp">
+                            <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758906111/IMG_4560.heic_uvea3f_aarxis.jpg" alt="Luxury Backyard Palm Oasis in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                        </picture>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                                <h3 class="text-xl font-semibold">Palm Tree Installation</h3>
+                            </div>
+                            <p class="text-gray-600">Enhance your property with our expert installation of premium palm varieties including Sylvester, Canary, and Pygmy Date palms, delivering instant tropical elegance and lasting beauty.</p>
+                        </div>
+                    </div>
+                    <div class="service-link-container">
+                        <a href="allServices.html#palm-tree-installation" class="inline-flex items-center text-green-600 font-medium">Palm Tree Installation<i data-feather="arrow-right" class="ml-2"></i></a>
+                    </div>
+                </div>
+                <div class="service-card-container">
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <picture>
+                            <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1759329297/IMG_5190_k77vyf_e_improve_mcwlqu.webp" type="image/webp">
+                            <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1759329297/IMG_5190_k77vyf_e_improve_mcwlqu.jpg" alt="Luxury Poolside Palms in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                        </picture>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <i data-feather="home" class="palm-icon h-6 w-6 mr-2"></i>
+                                <h3 class="text-xl font-semibold">Commercial Landscaping</h3>
+                            </div>
+                            <p class="text-gray-600">Elevate your business with tailored commercial landscaping, featuring signature palm designs, professional layouts, and low-maintenance solutions for a lasting impression.</p>
+                        </div>
+                    </div>
+                    <div class="service-link-container">
+                        <a href="allServices.html#commercial-landscaping" class="inline-flex items-center text-green-600 font-medium">View Commercial Services<i data-feather="arrow-right" class="ml-2"></i></a>
+                    </div>
+                </div>
+                <div class="service-card-container">
+                    <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                        <picture>
+                            <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758906111/IMG_4563.heic_mfrtze_mtgdtu.webp" type="image/webp">
+                            <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758906111/IMG_4563.heic_mfrtze_mtgdtu.jpg" alt="Tropical Backyard Retreat in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                        </picture>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <i data-feather="layers" class="palm-icon h-6 w-6 mr-2"></i>
+                                <h3 class="text-xl font-semibold">Residential Landscaping</h3>
+                            </div>
+                            <p class="text-gray-600">From sod installation, rock beds, paver patios and driveways to irrigation systems, hedges and more! We specialize in creating cohesive outdoor spaces centered around majestic palms.</p>
+                        </div>
+                    </div>
+                    <div class="service-link-container">
+                        <a href="allServices.html#residential-landscaping" class="inline-flex items-center text-green-600 font-medium">View Residential Services<i data-feather="arrow-right" class="ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Palm Tree Portfolio</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">See how we've transformed properties across Jacksonville with our signature palm installations.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-lg overflow-hidden shadow-lg" data-aos="zoom-in">
+                    <picture>
+                        <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758315437/IMG_4774.heic_vutjsa.webp 1200w, https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758315437/IMG_4774.heic_vutjsa.webp 800w" type="image/webp">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758315437/IMG_4774.heic_vutjsa.jpg" alt="Luxury Backyard Oasis in Jacksonville, FL" class="w-full h-80 object-cover hover:scale-105 transition duration-500" loading="lazy">
+                    </picture>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+                    <picture>
+                        <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758315436/IMG_4563.heic_mfrtze.webp 1200w, https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758315436/IMG_4563.heic_mfrtze.webp 800w" type="image/webp">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758315436/IMG_4563.heic_mfrtze.jpg" alt="Resort-Style Backyard in Jacksonville, FL" class="w-full h-80 object-cover hover:scale-105 transition duration-500" loading="lazy">
+                    </picture>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+                    <picture>
+                        <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758315432/IMG_3818.heic_dxv4cv.webp 1200w, https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758315432/IMG_3818.heic_dxv4cv.webp 800w" type="image/webp">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758315432/IMG_3818.heic_dxv4cv.jpg" alt="Palm-Lined Pool Area in Jacksonville, FL" class="w-full h-80 object-cover hover:scale-105 transition duration-500" loading="lazy">
+                    </picture>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg" data-aos="zoom-in">
+                    <picture>
+                        <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758906111/IMG_4560.heic_uvea3f_aarxis.webp 1200w, https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758906111/IMG_4560.heic_uvea3f_aarxis.webp 800w" type="image/webp">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758906111/IMG_4560.heic_uvea3f_aarxis.jpg" alt="Luxury Palm Installation in Jacksonville, FL" class="w-full h-80 object-cover hover:scale-105 transition duration-500" loading="lazy">
+                    </picture>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="100">
+                    <picture>
+                        <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758307365/IMG_7625_yvjdpf.webp 1200w, https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758307365/IMG_7625_yvjdpf.webp 800w" type="image/webp">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758307365/IMG_7625_yvjdpf.jpg" alt="Tropical Backyard Paradise in Jacksonville, FL" class="w-full h-80 object-cover hover:scale-105 transition duration-500" loading="lazy">
+                    </picture>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+                    <picture>
+                        <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758307366/IMG_7662_jesc7o.webp 1200w, https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758307366/IMG_7662_jesc7o.webp 800w" type="image/webp">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758307366/IMG_7662_jesc7o.jpg" alt="Premium Palm Oasis in Jacksonville, FL" class="w-full h-80 object-cover hover:scale-105 transition duration-500" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="gallery.html" class="inline-flex items-center text-green-600 font-medium">
+                    View Full Gallery
+                    <i data-feather="arrow-right" class="ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Palm Types Section -->
+    <section id="palm-types" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Palm Tree Varieties</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore the premium palm tree types we install to create stunning tropical landscapes.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Queen Palm</h3>
+                    </div>
+                    <p class="text-gray-600">Elegant and fast-growing, Queen Palms add a graceful, feathery look to any landscape, perfect for creating a tropical ambiance.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Robellini Palm</h3>
+                    </div>
+                    <p class="text-gray-600">Also known as Pygmy Date Palms, Robellinis are compact and versatile, ideal for smaller spaces or as accent plants.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Sylvester Palm</h3>
+                    </div>
+                    <p class="text-gray-600">Known for their striking silver-green fronds, Sylvester Palms are durable and add a bold, majestic presence to any property.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Foxtail Palm</h3>
+                    </div>
+                    <p class="text-gray-600">With lush, bushy fronds resembling a fox's tail, Foxtail Palms bring a vibrant, tropical aesthetic to any landscape.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Bismarck Palm</h3>
+                    </div>
+                    <p class="text-gray-600">Featuring dramatic, silver-blue fan-like fronds, Bismarck Palms make a stunning statement in large landscapes.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Canary Island Date Palm</h3>
+                    </div>
+                    <p class="text-gray-600">With its robust trunk and vibrant green fronds, the Canary Island Date Palm creates a dramatic focal point for large landscapes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-green-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Ready to Elevate Your Property?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Schedule your complimentary palm tree consultation today.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="index.html#contact" class="bg-white hover:bg-gray-100 text-green-700 px-8 py-4 rounded-md text-lg font-medium transition duration-300">Get a Free Quote</a>
+                <a href="tel:4434871019" class="border-2 border-white hover:bg-white hover:text-green-700 px-8 py-4 rounded-md text-lg font-medium transition duration-300">
+                    <i data-feather="phone" class="inline mr-2"></i> (443) 487-1019
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+                <div class="mb-12 lg:mb-0" data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Request a Consultation</h2>
+                    <p class="text-lg text-gray-600 mb-8">Complete the form to schedule your free palm tree installation consultation. Our experts will assess your property and provide recommendations tailored to your vision.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i data-feather="map-pin" class="palm-icon h-6 w-6"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-medium text-gray-900">Service Area</h3>
+                                <p class="text-gray-600">Jacksonville and surrounding areas including Ponte Vedra, St. Augustine, and Amelia Island</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i data-feather="clock" class="palm-icon h-6 w-6"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-medium text-gray-900">Business Hours</h3>
+                                <p class="text-gray-600">Monday - Friday: 8am - 6pm<br>Saturday: 9am - 2pm<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i data-feather="phone" class="palm-icon h-6 w-6"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-lg font-medium text-gray-900">Contact</h3>
+                                <p class="text-gray-600">Phone: (443) 487-1019<br>Email: mjjg2288@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <form id="contact-form" action="https://formspree.io/f/xzzjbgja" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:ring-green-500 focus:border-green-500" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:ring-green-500 focus:border-green-500" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:ring-green-500 focus:border-green-500" required>
+                        </div>
+                        <div>
+                            <label for="property-type" class="block text-sm font-medium text-gray-700">Property Type</label>
+                            <select id="property-type" name="property-type" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:ring-green-500 focus:border-green-500">
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>New Construction</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Project Details</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 focus:ring-green-500 focus:border-green-500" required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full flex justify-center py-4 px-6 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-300">
+                                Submit Request
+                            </button>
+                        </div>
+                        <div id="form-message" class="text-center text-red-600 hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center">
+                        <i data-feather="palm-tree" class="palm-icon h-8 w-8"></i>
+                        <span class="ml-2 text-xl font-bold">Luxury Palm Landworks</span>
+                    </div>
+                    <p class="mt-4 text-gray-400">Jacksonville's premier palm tree installation specialists creating tropical paradises since 2010.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="allServices.html#palm-tree-installation" class="text-gray-400 hover:text-white transition duration-300">Palm Tree Installation</a></li>
+                        <li><a href="allServices.html#commercial-landscaping" class="text-gray-400 hover:text-white transition duration-300">Commercial Landscaping</a></li>
+                        <li><a href="allServices.html#residential-landscaping" class="text-gray-400 hover:text-white transition duration-300">Residential Landscaping</a></li>
+                        <li><a href="allServices.html" class="text-gray-400 hover:text-white transition duration-300">Maintenance Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="allServices.html" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
+                        <li><a href="index.html#palm-types" class="text-gray-400 hover:text-white transition duration-300">Palm Types</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="h-5 w-5 text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">Jacksonville, FL</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="h-5 w-5 text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">(443) 487-1019</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="h-5 w-5 text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">mjjg2288@gmail.com</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://facebook.com/luxurypalmsjax" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="facebook" class="h-6 w-6"></i>
+                        </a>
+                        <a href="https://instagram.com/luxurypalmsjax" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="instagram" class="h-6 w-6"></i>
+                        </a>
+                        <a href="https://twitter.com/luxurypalmsjax" class="text-gray-400 hover:text-white transition duration-300">
+                            <i data-feather="twitter" class="h-6 w-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+                <p>&copy; 2025 Luxury Palms JAX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // AOS and Feather Icons Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Initialize Feather Icons
+            feather.replace();
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+                const isOpen = mobileMenu.classList.contains('open');
+                mobileMenuButton.setAttribute('aria-expanded', isOpen);
+                mobileMenuButton.querySelector('i').setAttribute('data-feather', isOpen ? 'x' : 'menu');
+                feather.replace();
+            });
+
+            // Form validation and submission
+            const form = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                const name = formData.get('name').trim();
+                const email = formData.get('email').trim();
+                const phone = formData.get('phone').trim();
+                const message = formData.get('message').trim();
+
+                if (!name || !email || !phone || !message) {
+                    formMessage.textContent = 'Please fill out all required fields.';
+                    formMessage.classList.remove('hidden');
+                    return;
+                }
+
+                if (!emailRegex.test(email)) {
+                    formMessage.textContent = 'Please enter a valid email address.';
+                    formMessage.classList.remove('hidden');
+                    return;
+                }
+
+                formMessage.classList.add('hidden');
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                    });
+
+                    if (response.ok) {
+                        formMessage.textContent = 'Form submitted successfully!';
+                        formMessage.classList.remove('hidden', 'text-red-600');
+                        formMessage.classList.add('text-green-600');
+                        form.reset();
+                    } else {
+                        formMessage.textContent = 'Error submitting form. Please try again.';
+                        formMessage.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    formMessage.textContent = 'Error submitting form. Please try again.';
+                    formMessage.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+</xaiArtifact>
+
+### New `allServices.html`
+<xaiArtifact artifact_id="1c7a8a19-23a1-4287-a9bd-173375990a1f" artifact_version_id="1c61bb78-f38b-4181-8e9d-677a62ad7509" title="allServices.html" contentType="text/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Luxury Palm Landworks</title>
+    <meta name="description" content="Explore our comprehensive landscaping services in Jacksonville, FL, including palm tree installation, commercial landscaping, and residential landscaping.">
+    <meta name="keywords" content="palm tree installation, commercial landscaping, residential landscaping, Jacksonville, luxury palms, tropical landscaping">
+    <meta name="author" content="Luxury Palm Landworks">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Our Services | Luxury Palm Landworks">
+    <meta property="og:description" content="Explore our comprehensive landscaping services in Jacksonville, FL, including palm tree installation, commercial landscaping, and residential landscaping.">
+    <meta property="og:image" content="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758906114/IMG_5125.heic_qmtjxr_dbv9tr.jpg">
+    <meta property="og:url" content="https://www.luxurypalmsjax.com/allServices.html">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Services | Luxury Palm Landworks">
+    <meta name="twitter:description" content="Explore our comprehensive landscaping services in Jacksonville, FL, including palm tree installation, commercial landscaping, and residential landscaping.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758906114/IMG_5125.heic_qmtjxr_dbv9tr.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1920/v1758906114/IMG_5125.heic_qmtjxr_dbv9tr.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .tree-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .palm-icon {
+            color: #22c55e;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 500px;
+        }
+        .emoji-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Luxury Palm Landworks",
+        "image": "https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_1200/v1758906114/IMG_5125.heic_qmtjxr_dbv9tr.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jacksonville",
+            "addressRegion": "FL",
+            "addressCountry": "US"
+        },
+        "telephone": "(443) 487-1019",
+        "email": "mjjg2288@gmail.com",
+        "url": "https://www.luxurypalmsjax.com",
+        "description": "Premier palm tree installation and landscaping services in Jacksonville, FL.",
+        "openingHours": [
+            "Mo-Fr 08:00-18:00",
+            "Sa 09:00-14:00"
+        ]
+    }
+    </script>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <i data-feather="palm-tree" class="palm-icon h-8 w-8"></i>
+                    <span class="ml-2 text-xl font-bold text-gray-900">Luxury Palm Landworks</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-4">
+                        <a href="index.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="allServices.html" class="text-green-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="gallery.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Gallery</a>
+                        <a href="index.html#palm-types" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Palm Types</a>
+                        <a href="index.html#contact" class="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition duration-300">Get a Quote</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-600 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button" aria-label="Toggle mobile menu">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="index.html" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                    <a href="allServices.html" class="text-green-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
+                    <a href="index.html#palm-types" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Palm Types</a>
+                    <a href="index.html#contact" class="bg-green-600 text-white block px-4 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-300">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-screen flex items-center justify-center text-white pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Our Comprehensive Services</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Discover our expert palm tree installation and landscaping solutions tailored for homes and businesses in Jacksonville, FL.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html#contact" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-md text-lg font-medium transition duration-300">Request a Consultation</a>
+                <a href="#palm-tree-installation" class="bg-white hover:bg-gray-100 text-green-600 px-8 py-4 rounded-md text-lg font-medium transition duration-300">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Palm Tree Installation Section -->
+    <section id="palm-tree-installation" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Palm Tree Installation</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Explore the premium palm tree types we install to create stunning tropical landscapes.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Queen Palm</h3>
+                    </div>
+                    <p class="text-gray-600">Elegant and fast-growing, Queen Palms add a graceful, feathery look to any landscape, perfect for creating a tropical ambiance.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Robellini Palm</h3>
+                    </div>
+                    <p class="text-gray-600">Also known as Pygmy Date Palms, Robellinis are compact and versatile, ideal for smaller spaces or as accent plants.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Sylvester Palm</h3>
+                    </div>
+                    <p class="text-gray-600">Known for their striking silver-green fronds, Sylvester Palms are durable and add a bold, majestic presence to any property.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Foxtail Palm</h3>
+                    </div>
+                    <p class="text-gray-600">With lush, bushy fronds resembling a fox's tail, Foxtail Palms bring a vibrant, tropical aesthetic to any landscape.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Bismarck Palm</h3>
+                    </div>
+                    <p class="text-gray-600">Featuring dramatic, silver-blue fan-like fronds, Bismarck Palms make a stunning statement in large landscapes.</p>
+                </div>
+                <div class="tree-card p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://res.cloudinary.com/dxghmamh0/image/upload/v1758904411/e2714299bacb6ed02f09a9be22f8fae9_bzmszy.jpg" alt="Palm Tree Emoji" class="emoji-icon">
+                        <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
+                        <h3 class="text-xl font-semibold">Canary Island Date Palm</h3>
+                    </div>
+                    <p class="text-gray-600">With its robust trunk and vibrant green fronds, the Canary Island Date Palm creates a dramatic focal point for large landscapes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Landscaping Section -->
+    <section id="commercial-landscaping" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Commercial Landscaping</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Transform your business property with our tailored commercial landscaping services, designed for lasting appeal and functionality.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=800&auto=format&fit=crop" alt="Land Clearing for Commercial Property in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="truck" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Land Clearing</h3>
+                        </div>
+                        <p class="text-gray-600">Prepare your commercial site with our efficient land clearing services, removing debris and vegetation for a clean, ready-to-build landscape.</p>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1597346900623-38b3eb86b27e?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1597346900623-38b3eb86b27e?q=80&w=800&auto=format&fit=crop" alt="Sod Installation for Commercial Property in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="grass" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Sod Installation</h3>
+                        </div>
+                        <p class="text-gray-600">Create lush, green lawns with our professional sod installation, tailored to enhance the aesthetic and functionality of your commercial property.</p>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Neighborhood Planning in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="map" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Neighborhood Planning</h3>
+                        </div>
+                        <p class="text-gray-600">Design cohesive, inviting neighborhoods with our expert planning services, integrating palms and landscaping for community appeal.</p>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=800&auto=format&fit=crop" alt="Community Planning in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="users" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Community Planning</h3>
+                        </div>
+                        <p class="text-gray-600">Enhance community spaces with strategic landscaping plans, featuring palm-centric designs for vibrant, welcoming environments.</p>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1593642532973-d31b97d0fad2?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1593642532973-d31b97d0fad2?q=80&w=800&auto=format&fit=crop" alt="Irrigation Systems for Commercial Property in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="droplet" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Irrigation Systems</h3>
+                        </div>
+                        <p class="text-gray-600">Ensure healthy landscapes with our efficient irrigation systems, designed for low maintenance and optimal water use in commercial settings.</p>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1618221710640-bff7a9e3ae90?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1618221710640-bff7a9e3ae90?q=80&w=800&auto=format&fit=crop" alt="Hardscape Design for Commercial Property in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="box" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Hardscape Design</h3>
+                        </div>
+                        <p class="text-gray-600">Add elegance with custom hardscapes like walkways and patios, seamlessly integrated with palms for a polished commercial look.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Residential Landscaping Section -->
+    <section id="residential-landscaping" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Residential Landscaping</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Create your dream outdoor space with our comprehensive residential landscaping services, centered around majestic palms.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1597346900623-38b3eb86b27e?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1597346900623-38b3eb86b27e?q=80&w=800&auto=format&fit=crop" alt="Sod Installation for Residential Property in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="grass" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Sod Installation</h3>
+                        </div>
+                        <p class="text-gray-600">Transform your lawn with our expert sod installation, delivering lush, green grass for a vibrant outdoor space.</p>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1595435289889-1f06e0bbdf67?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1595435289889-1f06e0bbdf67?q=80&w=800&auto=format&fit=crop" alt="Custom Rock Beds in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="box" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Custom Rock Beds</h3>
+                        </div>
+                        <p class="text-gray-600">Enhance your yard with custom rock beds, designed to complement palms and create low-maintenance, stylish landscapes.</p>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1593642532973-d31b97d0fad2?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1593642532973-d31b97d0fad2?q=80&w=800&auto=format&fit=crop" alt="Irrigation Systems for Residential Property in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="droplet" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Irrigation Systems</h3>
+                        </div>
+                        <p class="text-gray-600">Keep your lawn thriving with our efficient irrigation systems, tailored for easy maintenance and water conservation.</p>
+                    </div>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" alt="Tree and Stump Removal in Jacksonville, FL" class="w-full h-64 object-cover" loading="lazy">
+                    </picture>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i data-feather="x-circle" class="palm-icon h-6 w-6 mr-2"></i>
+                            <h3 class="text-xl font-semibold">Tree/Stump Removal</h3>
+                        </div>
+                        <p class="text-gray-600">Clear unwanted trees and stumps with our professional removal services, preparing your yard for new landscaping.</p>
+                    </div>
+                </div>
+                <
