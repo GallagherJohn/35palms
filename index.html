@@ -63,7 +63,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 60px;
+            padding-top: 8px;
+        }
+        @media (min-width: 1024px) {
+            .services-grid {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 2rem;
+            }
+            .service-card-container {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
     <!-- Structured Data for SEO -->
@@ -102,7 +116,7 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-4">
                         <a href="index.html" class="text-green-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="index.html#services" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="allServices.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
                         <a href="gallery.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Gallery</a>
                         <a href="index.html#palm-types" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium">Palm Types</a>
                         <a href="index.html#contact" class="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition duration-300">Get a Quote</a>
@@ -117,7 +131,7 @@
             <div id="mobile-menu" class="md:hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="index.html" class="text-green-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                    <a href="index.html#services" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="allServices.html" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
                     <a href="gallery.html" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
                     <a href="index.html#palm-types" class="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium">Palm Types</a>
                     <a href="index.html#contact" class="bg-green-600 text-white block px-4 py-2 rounded-md text-base font-medium hover:bg-green-700 transition duration-300">Get a Quote</a>
@@ -133,7 +147,7 @@
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Jacksonville's premier palm tree installation specialists creating tropical paradises for homes and businesses.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="index.html#contact" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-md text-lg font-medium transition duration-300">Request a Consultation</a>
-                <a href="index.html#services" class="bg-white hover:bg-gray-100 text-green-600 px-8 py-4 rounded-md text-lg font-medium transition duration-300">Our Services</a>
+                <a href="allServices.html" class="bg-white hover:bg-gray-100 text-green-600 px-8 py-4 rounded-md text-lg font-medium transition duration-300">Our Services</a>
             </div>
         </div>
     </section>
@@ -145,8 +159,8 @@
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Premium Services</h2>
                 <p class="text-lg text-gray-600 max-w-3xl mx-auto">Specializing in palm tree installations with comprehensive landscaping solutions for every property type.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:flex services-grid">
+                <div class="service-card-container">
                     <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="100">
                         <picture>
                             <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758906111/IMG_4560.heic_uvea3f_aarxis.webp" type="image/webp">
@@ -157,14 +171,14 @@
                                 <i data-feather="palm-tree" class="palm-icon h-6 w-6 mr-2"></i>
                                 <h3 class="text-xl font-semibold">Palm Tree Installation</h3>
                             </div>
-                            <p class="text-gray-600">Expert installation of premium palm varieties including Royal, Queen, and Pygmy Date palms for instant tropical appeal.</p>
+                            <p class="text-gray-600">Enhance your property with our expert installation of premium palm varieties including Sylvester, Canary, and Pygmy Date palms, delivering instant tropical elegance and lasting beauty.</p>
                         </div>
                     </div>
                     <div class="service-link-container">
-                        <a href="#" class="inline-flex items-center text-green-600 font-medium">Palm Tree Installation<i data-feather="arrow-right" class="ml-2"></i></a>
+                        <a href="allServices.html#palm-tree-installation" class="inline-flex items-center text-green-600 font-medium">Palm Tree Installation<i data-feather="arrow-right" class="ml-2"></i></a>
                     </div>
                 </div>
-                <div>
+                <div class="service-card-container">
                     <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="200">
                         <picture>
                             <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1759329297/IMG_5190_k77vyf_e_improve_mcwlqu.webp" type="image/webp">
@@ -175,14 +189,14 @@
                                 <i data-feather="home" class="palm-icon h-6 w-6 mr-2"></i>
                                 <h3 class="text-xl font-semibold">Commercial Landscaping</h3>
                             </div>
-                            <p class="text-gray-600">Elevate your business property with our comprehensive commercial landscaping services featuring signature palm designs.</p>
+                            <p class="text-gray-600">Elevate your business with tailored commercial landscaping, featuring signature palm designs, professional layouts, and low-maintenance solutions for a lasting impression.</p>
                         </div>
                     </div>
                     <div class="service-link-container">
-                        <a href="index.html#services" class="inline-flex items-center text-green-600 font-medium">View Commercial Services<i data-feather="arrow-right" class="ml-2"></i></a>
+                        <a href="allServices.html#commercial-landscaping" class="inline-flex items-center text-green-600 font-medium">View Commercial Services<i data-feather="arrow-right" class="ml-2"></i></a>
                     </div>
                 </div>
-                <div>
+                <div class="service-card-container">
                     <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-aos="fade-up" data-aos-delay="300">
                         <picture>
                             <source srcset="https://res.cloudinary.com/dxghmamh0/image/upload/q_auto,f_auto,w_800/v1758906111/IMG_4563.heic_mfrtze_mtgdtu.webp" type="image/webp">
@@ -193,11 +207,11 @@
                                 <i data-feather="layers" class="palm-icon h-6 w-6 mr-2"></i>
                                 <h3 class="text-xl font-semibold">Residential Landscaping</h3>
                             </div>
-                            <p class="text-gray-600">From rock beds, hedges, sod installation, paver patios and driveways to irrigation systems, we create cohesive outdoor spaces centered around majestic palms.</p>
+                            <p class="text-gray-600">From sod installation, rock beds, paver patios and driveways to irrigation systems, hedges and more! We specialize in creating cohesive outdoor spaces centered around majestic palms.</p>
                         </div>
                     </div>
                     <div class="service-link-container">
-                        <a href="#" class="inline-flex items-center text-green-600 font-medium">View Residential Services<i data-feather="arrow-right" class="ml-2"></i></a>
+                        <a href="allServices.html#residential-landscaping" class="inline-flex items-center text-green-600 font-medium">View Residential Services<i data-feather="arrow-right" class="ml-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -422,16 +436,16 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Services</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition duration-300">Palm Tree Installation</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition duration-300">Commercial Landscaping</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition duration-300">Residential Landscaping</a></li>
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition duration-300">Maintenance Services</a></li>
+                        <li><a href="allServices.html#palm-tree-installation" class="text-gray-400 hover:text-white transition duration-300">Palm Tree Installation</a></li>
+                        <li><a href="allServices.html#commercial-landscaping" class="text-gray-400 hover:text-white transition duration-300">Commercial Landscaping</a></li>
+                        <li><a href="allServices.html#residential-landscaping" class="text-gray-400 hover:text-white transition duration-300">Residential Landscaping</a></li>
+                        <li><a href="allServices.html" class="text-gray-400 hover:text-white transition duration-300">Maintenance Services</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="allServices.html" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
                         <li><a href="gallery.html" class="text-gray-400 hover:text-white transition duration-300">Gallery</a></li>
                         <li><a href="index.html#palm-types" class="text-gray-400 hover:text-white transition duration-300">Palm Types</a></li>
                         <li><a href="index.html#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
